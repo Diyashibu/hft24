@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='register.css') }}">
+    <title>Register</title>
+</head>
+<body>
+    <div class="container">
+        <div class="image-container">
+            <img src="https://hips.hearstapps.com/hmg-prod/images/types-of-doctors-1600114658.jpg?crop=1.00xw:1.00xh;0,0&resize=1200:*" alt="Hospital Registration">
+        </div>
+        <div class="form-container">
+            <h1>Register</h1>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <ul>
+                        {% for message in messages %}
+                            <li style="color: {% if 'danger' in message %}red{% else %}green{% endif %};">{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+            <form method="post" action="{{ url_for('register') }}">
+                <label for="username">Username:</label>
+                <input type="text"  name="username" required><br>
+                <label for="age">Age: </label>
+                <input type="number" class="age" name="age" required><br>
+                
+                <label for="phone_number">Phone Number: </label>
+                <input type="text" name="phone_number" required><br>
+                
+                <label for="sex">Sex: </label>
+                <select name="sex" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select><br>
+            
+                <label for="address">Address: </label>
+                <textarea name="address" required></textarea><br>
+            
+                <label for="email">Email:</label>
+                <input type="email" name="email" required><br>
+                <label for="blood_group">Blood Group: </label>
+                <input type="text" name="blood_group" required><br>
+                
+                <label for="password">Password:</label>
+                <input type="password" name="password" required><br>
+                <label for="confirm_password">Confirm Password:</label>
+                <input type="password" name="confirm_password" required><br>
+                <button type="submit">Register</button>
+            </form>
+            <p>Already have an account? <a href="">Login here</a>.</p>
+        </div>
+    </div>
+</body>
+</html>
