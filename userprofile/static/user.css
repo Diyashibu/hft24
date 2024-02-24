@@ -1,12 +1,12 @@
 
-.body {
+body {
     font-family: 'Arial, sans-serif';
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0;
     padding: 0;
-    background-color: #d2d6dc; 
+    background-color: #d3e1f8; 
     min-height: 100vh;
 }
 
@@ -112,7 +112,22 @@
     color: rgb(72, 72, 252);
 }
 
+.view-more-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
 
+.view-more-button:hover {
+    background-color: #45a049;
+}
 
   @media (max-width: 767px) {
     .container {
